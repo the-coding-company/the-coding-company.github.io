@@ -2,6 +2,8 @@ body{
   margin:0;
   font-family: 'Ubuntu', sans-serif;
   color:#444;
+  letter-spacing:1px;
+  line-height:1.4;
 }
 .header{
   padding:8px;
@@ -10,6 +12,6 @@ body{
 .content{
   padding:8px;
   h1{
-    text-transform: uppercase;;
+    text-transform: uppercase;
   }
 }

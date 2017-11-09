@@ -13,10 +13,35 @@
 <div class="header">
 <img src="imgs/cclogo.png">
 </div>
-<section class="content">
+<div class="content">
+<section>
 <h1>web developers</h1>
 <p>Hi, this is the github page for <a href="http://thecodingcompany.co.uk/" title="link to the coding company">the coding company</a> web developers based in Wiltshire UK and developing on a variety of different stacks.  Recent work has been on front end JS frameworks such as Angular using a custom built PHP API to take care of the data retrieval at the back end.  We also get involved in custom code for Wordpress including plugins and Woocommerce the e-commerce add-on.  Of course we still do the day to day regular coding with HTML, CSS and quite often jQuery.</p>
 </section>
+<section>
+<p>With all projects or even updates we consider error testing and unit testing to be the staple of any additions to a code base.  If unit testing is not part of the framework build we would usally run something like the following in PHP:</p>
+<code>
+  $start = microtime(true);<br>
+  ...(any code)<br>
+  $time_elapsed = microtime(true) - $start;<br>
+  error_log('run time = '.$time_elapsed);<br>
+</code>
+<p>Using the above method within a PHP project can be extremely useful in identifying bottlenecks in the code and areas that need further optimisation.  If we suspect their maybe a wait event on the front end within JavaScript we would inject the following into the JS code:</p>
+<code>
+  var start = new Date().getTime();<br>
+  ...(any code)<br>
+  var end = new Date().getTime();<br>
+  console.log('this many milliseconds passed', end - start);<br>
+</code>
+<p>Of course its not just slow code or functions that can be an issue sometimes the code is just plain broke, this is why console logs and error logs are so important.  In Javascript errors and warnings are usally passed to the console log where the issue can be seen, however sometimes there is is no visible error because the value passed could just be not as expected, thats when its useful to add console.log(a value) to the script. A simular practice can be used with PHP in adding error_log(a value) to a script and check the default error log for the results.</p>
+<p>In the modern world sometimes data doesn’t just come from controlled origins it can come from user input or quite ofter an API or feed.  Our philosophy is to sanitise everything and not to trust  foreign data whoever the source.  Most modern frameworks have their own libraries for sanitising data however sometimes as an addition to existing software or a code base that was pre frameworks we need to sanitise in our own way, in PHP a few methods we have used would be:</p>
+<code>
+filter_var(Your Var, choice of filter);<br>
+preg_replace(filter,replacement, var);<br>
+str_replace(search,replace)
+</code>
+</section>
+</div>
 <script type='text/javascript' async src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js?ver=4.8.2'></script>
 </body>
 </html>
